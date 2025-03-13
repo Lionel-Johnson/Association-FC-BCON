@@ -1,0 +1,143 @@
+/* Appliquer un fond général pour l'effet glassmorphism */
+body {
+    background: url('img/OLIGUI.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #002366; /* Bleu foncé */
+}
+
+/* Animation du logo */
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Style du logo */
+.logo-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement (si hauteur définie) */
+    height: 100vh; /* Optionnel : centre sur toute la hauteur de la page */
+}
+
+.logo {
+   /* animation: rotation 20s linear infinite; */
+    width: 230px;
+    margin-left: 150px;
+}
+
+/* left title*/
+.left-title {
+    text-align: left; /* Assure que le texte est bien aligné à gauche */
+    display: flex;
+    flex-direction: column; /* Met les éléments en colonne */
+    align-items: flex-start; /* Aligne tout à gauche */
+    padding-left: 20px; /* Optionnel : ajoute un petit espace depuis le bord gauche */
+}
+
+
+/* right title*/
+
+.right-title {
+    text-align: right; /* Aligne le texte à droite */
+    margin-top: -180px;
+}
+
+/* Effet Glassmorphism sur le formulaire */
+form {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Bordure tricolore (vert, jaune, bleu) autour du formulaire avec moins de transparence */
+form::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(0, 158, 96, 0.7), rgba(252, 209, 22, 0.7), rgba(58, 117, 196, 0.7));
+    z-index: -1;
+}
+
+/* Styles des labels */
+form label {
+    font-weight: bold;
+    text-align: left;
+    color: #002366; /* Bleu foncé */
+}
+
+/* Champs de formulaire */
+form input {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: #002366; /* Bleu foncé */
+    backdrop-filter: blur(5px);
+}
+
+form input::placeholder {
+    color: rgba(0, 35, 102, 0.7); /* Bleu foncé avec opacité */
+}
+
+/* Bouton de soumission en rouge */
+button {
+    background: red;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Quand on survole, il devient vert */
+button:hover {
+    background: green;
+    transform: scale(1.05); /* Effet de léger agrandissement */
+}
+
+/* Effet Glassmorphism pour le footer */
+footer {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    color: #002366; /* Bleu foncé */
+}
+
+footer a {
+    color: #002366; /* Bleu foncé */
+    text-decoration: none;
+}
